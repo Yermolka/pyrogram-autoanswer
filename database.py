@@ -130,9 +130,9 @@ class DB_API:
             if res:
                 return
 
-            msg_1 = Response('msg_1', time_before_send=6 * 60)
-            msg_2 = Response('msg_2', ['триггер1'], time_before_send=39 * 60)
-            msg_3 = Response('msg_3', time_before_send=26*60*60)
+            msg_1 = Response('Текст1', time_before_send=6 * 60)
+            msg_2 = Response('Текст2', ['триггер1'], time_before_send=39 * 60)
+            msg_3 = Response('Текст3', time_before_send=26*60*60)
         
             session.add(msg_1)
             session.add(msg_2)
