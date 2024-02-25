@@ -28,7 +28,7 @@ import database, models
 target_metadata = models.Base.metadata
 
 db = database.DB_API()
-config.set_main_option('sqlalchemy.url', db.conn_string)
+config.set_main_option('sqlalchemy.url', db.conn_string.replace('@db', '@localhost'))
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
