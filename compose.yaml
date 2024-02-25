@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:12.18-bullseye
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - database:/data/db
+
+  autoanswer-bot:
+    build:
+      context: .
+    depends_on:
+      - db
+    develop:
+      watch:
+        - path: ./
+          target: /usr/src/autoanswer
+          action: sync
+
+
+volumes:
+  database:

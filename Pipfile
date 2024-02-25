@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyrogram = "*"
+asyncpg = "*"
+sqlalchemy = {extras = ["asyncio"], version = "*"}
+alembic = "*"
+python-dotenv = "*"
+click = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
